@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    background: #1e1e1e;
+    color: #d4d4d4;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background: #2d2d30;
+    padding: 10px 20px;
+    border-bottom: 1px solid #3e3e42;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header h1 {
+    color: #569cd6;
+    font-size: 18px;
+}
+
+.language-selector {
+    background: #3c3c3c;
+    border: 1px solid #5a5a5a;
+    color: #d4d4d4;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.main-container {
+    flex: 1;
+    display: flex;
+    height: calc(100vh - 60px);
+}
+
+.editor-container {
+    flex: 1;
+    position: relative;
+    background: #1e1e1e;
+    border-right: 1px solid #3e3e42;
+}
+
+.line-numbers {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    background: #252526;
+    color: #858585;
+    padding: 20px 10px;
+    border-right: 1px solid #3e3e42;
+    font-size: 14px;
+    line-height: 20px;
+    user-select: none;
+    z-index: 1;
+}
+
+.editor-wrapper {
+    position: relative;
+    height: 100%;
+    margin-left: 50px;
+}
+
+.code-editor {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #d4d4d4;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 20px;
+    resize: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    caret-color: #d4d4d4;
+}
+
+.highlight-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    padding: 20px;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 20px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    z-index: 1;
+    color: transparent;
+}
+
+.token-keyword { color: #d73a49; font-weight: bold; }
+.token-string { color: #032f62; }
+.token-number { color: #005cc5; }
+.token-identifier { color: #6f42c1; }
+.token-operator { color: #d73a49; }
+
+
+.info-panel {
+    width: 300px;
+    background: #252526;
+    padding: 20px;
+    overflow-y: auto;
+    border-left: 1px solid #3e3e42;
+}
+
+.info-section {
+    margin-bottom: 20px;
+}
+
+.info-section h3 {
+    color: #569cd6;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.token-list {
+    background: #1e1e1e;
+    border: 1px solid #3e3e42;
+    border-radius: 4px;
+    padding: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.token-item {
+    padding: 2px 0;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.parse-tree {
+    background: #1e1e1e;
+    border: 1px solid #3e3e42;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 12px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Sözdizimi Vurgulama */
+.keyword { 
+    color: #d73a49; 
+    font-weight: bold; 
+}
+
+.string { 
+    color: #032f62; 
+}
+
+.number { 
+    color: #005cc5; 
+}
+
+.comment { 
+    color: #6a9955; 
+    font-style: italic; 
+}
+
+.operator { 
+    color: #d4d4d4; 
+}
+
+.identifier { 
+    color: #6f42c1; 
+}
+
+.function { 
+    color: #dcdcaa; 
+}
+
+.bracket { 
+    color: #ffd700; 
+}
+
+.error { 
+    color: #f44747; 
+    background: rgba(244, 71, 71, 0.1); 
+    text-decoration: underline wavy #f44747;
+}
+
+.stats {
+    display: flex;
+    gap: 15px;
+    font-size: 12px;
+    color: #858585;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-value {
+    color: #569cd6;
+    font-weight: bold;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #424242;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Gerçek zamanlı güncellemeler için  */
+.token-item {
+    transition: background-color 0.2s ease-in-out;
+}
+
+.token-item:hover {
+    background-color: #3e3e42;
+}
+
+/*Durum göstergeleri */
+.status-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.status-ready {
+    background-color: #4caf50;
+}
+
+.status-processing {
+    background-color: #ff9800;
+}
+
+.status-error {
+    background-color: #f44336;
+}
+
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Syntax Highlighter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Real-Time Syntax Highlighter</h1>
+        <select class="language-selector" id="languageSelect">
+            <option value="javascript">JavaScript</option>
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+            <option value="cpp">C++</option>
+        </select>
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-value" id="lineCount">1</span>
+                <span>Satır</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value" id="tokenCount">0</span>
+                <span>Token</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value" id="errorCount">0</span>
+                <span>Hata</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="editor-container">
+            <div class="line-numbers" id="lineNumbers">1</div>
+            <div class="editor-wrapper">
+                <div class="highlight-overlay" id="highlightOverlay"></div>
+                <textarea class="code-editor" id="codeEditor" placeholder="Kodunuzu buraya yazın...">// JavaScript Örnek Kod
+function fibonacci(n) {
+    if (n <= 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+let result = fibonacci(10);
+console.log("Sonuç: " + result);
+
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map(x => x * 2);</textarea>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <div class="info-section">
+                <h3>Tokenlar</h3>
+                <div class="token-list" id="tokenList"></div>
+            </div>
+
+            <div class="info-section">
+                <h3>Parse Ağacı</h3>
+                <div class="parse-tree" id="parseTree"></div>
+            </div>
+
+            <div class="info-section">
+                <h3>Sözdizimi Kuralları</h3>
+                <div class="parse-tree">
+                    <div>Program → Statement*</div>
+                    <div>Statement → FunctionDecl | VarDecl | Expression</div>
+                    <div>FunctionDecl → 'function' ID '(' Parameters ')' Block</div>
+                    <div>VarDecl → ('let'|'const'|'var') ID '=' Expression</div>
+                    <div>Expression → Term (Operator Term)*</div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h3>Lexical Analyzer Durumu</h3>
+                <div class="parse-tree" id="lexerStatus">
+                    <div>Durum: <span id="lexerState">Hazır</span></div>
+                    <div>Son Token: <span id="lastToken">-</span></div>
+                    <div>Pozisyon: <span id="currentPos">0</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="lexical-analyzer.js"></script>
+    <script src="syntax-parser.js"></script>
+    <script src="syntax-highlighter.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
