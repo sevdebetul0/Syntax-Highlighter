@@ -16,7 +16,7 @@ Gerçek Zamanlı Sözdizimi Vurgulayıcı - Çoklu programlama dili desteği ile
 ## 🖥️ Canlı Demo
 [Canlı demo](https://sevdebetul0.github.io/Syntax-Highlighter/)
 
-🔗 Medium Makale**  
+## 🔗 Medium Makale  
 [Makale linki](https://medium.com/@23360859038/gerçek-zamanlı-sözdizimi-vurgulayıcı-ile-web-tabanlı-gui-uygulaması-13a279a68463)
 
 ## 📋 Desteklenen Diller
