@@ -14,7 +14,10 @@ Gerçek Zamanlı Sözdizimi Vurgulayıcı - Çoklu programlama dili desteği ile
 - **🎨 Modern UI**: VS Code benzeri dark theme arayüz
 
 ## 🖥️ Canlı Demo
-https://sevdebetul0.github.io/Syntax-Highlighter/
+[Canlı demo](https://sevdebetul0.github.io/Syntax-Highlighter/)
+
+🔗 Medium Makale**  
+[Makale linki](https://medium.com/@23360859038/gerçek-zamanlı-sözdizimi-vurgulayıcı-ile-web-tabanlı-gui-uygulaması-13a279a68463)
 
 ## 📋 Desteklenen Diller
 
@@ -53,6 +56,10 @@ https://sevdebetul0.github.io/Syntax-Highlighter/
 - **Real-time Processing**: Anlık kod vurgulama
 - **Overlay System**: Textarea üzerinde HTML overlay
 - **Scroll Sync**: Editör ve vurgulama senkronizasyonu
+## 🧪Örnek Uygulama
+![Ekran görüntüsü 2025-06-06 142149](https://github.com/user-attachments/assets/ae07e7fd-9b02-4d75-852d-ae2bbf25d085)
+
+![Ekran görüntüsü 2025-06-06 142335](https://github.com/user-attachments/assets/ee904017-123e-418b-94f0-a6db428ec20b)
 
 ## 🎯 Kullanım
 
