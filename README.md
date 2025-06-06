@@ -19,6 +19,9 @@ Gerçek Zamanlı Sözdizimi Vurgulayıcı - Çoklu programlama dili desteği ile
 ## 🔗 Medium Makale  
 [Makale linki](https://medium.com/@23360859038/gerçek-zamanlı-sözdizimi-vurgulayıcı-ile-web-tabanlı-gui-uygulaması-13a279a68463)
 
+## 📽️ Uygulama Video  
+[Video linki](https://youtu.be/Z0l17HFxucA)
+
 ## 📋 Desteklenen Diller
 
 | Dil | Durum | 
