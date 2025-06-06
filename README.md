@@ -14,7 +14,7 @@ Gerçek Zamanlı Sözdizimi Vurgulayıcı - Çoklu programlama dili desteği ile
 - **🎨 Modern UI**: VS Code benzeri dark theme arayüz
 
 ## 🖥️ Canlı Demo
-
+https://sevdebetul0.github.io/Syntax-Highlighter/
 
 ## 📋 Desteklenen Diller
 
